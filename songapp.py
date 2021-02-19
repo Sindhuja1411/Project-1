@@ -25,6 +25,7 @@ def token_required():
     token = bearer_token.split()[1]
     print(token)
     if token:
+        print("in if")
         secret_key = 'abcd'
         decoded = jwt.decode(token, secret_key, options={'verify_exp': False})
         print(decoded)
