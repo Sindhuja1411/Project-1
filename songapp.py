@@ -75,7 +75,7 @@ def login():
     print(hashed)
     user_login['password'] = hashed
     if(check_user['password']==user_login['password']):
-
+        print("in if")
         secret_key = 'abcd'
         payload = {'user': check_user['email'], 'exp': time.time() + 300}
         print(payload)
