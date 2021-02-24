@@ -25,7 +25,7 @@ def token_required():
     token = bearer_token.split()[1]
     print(token)
     if token:
-
+        print("in if")
         secret_key = 'abcd'
         decoded = jwt.decode(token, secret_key, options={'verify_exp': False})
         print(decoded)
@@ -76,7 +76,7 @@ def login():
     print(hashed)
     user_login['password'] = hashed
     if(check_user['password']==user_login['password']):
-        print("in if")
+        
         secret_key = 'abcd'
         payload = {'user': check_user['email'], 'exp': time.time() + 300}
         print(payload)
